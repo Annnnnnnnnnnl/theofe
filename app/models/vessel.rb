@@ -1,7 +1,9 @@
 class Vessel < ApplicationRecord
   belongs_to :user
 
-  validates :type, presence: true
+  validates :name, presence: true
+  validates :price, presence: true
+  validates :vessel_type, presence: true
   validates :dwt, presence: true
   validates :age, presence: true
   validates :imo_no,presence: true

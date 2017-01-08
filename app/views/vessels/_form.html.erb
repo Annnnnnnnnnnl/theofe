@@ -1,0 +1,107 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		List Your Vessel Here:
+	</div>
+
+  <div class="panel-body">
+		<div class="container">
+			<%= form_for @vessel do |f| %>
+
+      <div class="row">
+        <div class="col-md-3">
+        <div class="form-group">
+          <label>Vessel name</label>
+          <div class="input-group">
+        <%= f.text_field :name, placeholder: "vessel name", class: "form-group" %>
+       </div>
+      </div>
+    </div>
+
+				<div class="col-md-3 select">
+						<div class="form-group">
+							<label>Ship Type</label>
+							<%= f.select :vessel_type, [["Tanker","Tanker"], ["Dry Bulk","Dry Bulk"], ["Boxship","Boxship"],["Offshore","Offshore"]], id: "type", prompt: "Select...", class: "form-control" %>
+						</div>
+					</div>
+
+					<div class="col-md-3">
+						<div class="form-group">
+							<label>Dwt</label>
+              <%= f.text_field :dwt, placeholder: "Vessel's Dwt", class: "form-control" %>
+						</div>
+					</div>
+
+          <div class="col-md-3">
+            <div class="form-group">
+              <label>IMO No.</label>
+              <%= f.text_field :imo_no, placeholder: "IMO No.", class: "form-control" %>
+            </div>
+          </div>
+        </div>
+
+          <div class="row">
+          <div class="col-md-3"></div>
+
+           <div class="col-md-3">
+            <div class="form-group">
+              <label>Age</label>
+              <%= f.text_field :age, placeholder: "Age", class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="col-md-3">
+           <div class="form-group">
+             <label>Country Built</label>
+             <%= f.text_field :country_built, placeholder: "Country Built", class: "form-control" %>
+           </div>
+         </div>
+       </div>
+
+     <div class="row">
+					<div class="col-md-6 ">
+						<div class="form-group">
+							<label>Delivery Area</label>
+              <%= f.text_field :delivery_area, placeholder: "Delivery Area", class: "form-control" %>
+						</div>
+					</div>
+				</div>
+
+        <div class="row">
+             <div class="col-md-6 ">
+               <div class="form-group">
+                 <label>Delivery Date</label>
+                 <%= f.text_field :delivery_date, placeholder: "Delivery Date", class: "form-control" %>
+               </div>
+             </div>
+           </div>
+
+       <div class="row">
+            <div class="col-md-6 ">
+              <div class="form-group">
+                <label>Price</label> $
+                    <%= f.text_field :price, placeholder: "Price", class: "form-control" %>
+                  </div>
+                </div>
+              </div>
+
+
+				<div class="row">
+					<div class="form-group">
+						<label>Description</label>
+						<%= f.text_area :description, rows: 5, placeholder: "Tell about your vessel", class: "form-control" %>
+					</div>
+				</div>
+
+
+				<div class="actions">
+					<%= f.submit "List My vessel", class: "btn btn-primary" %>
+				</div>
+
+			<% end %>
+    </div>
+    </div>
+  </div>
+
+		</div>
+	</div>
+</div>

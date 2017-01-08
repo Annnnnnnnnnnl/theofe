@@ -1,5 +1,5 @@
 class VesselsController < ApplicationController
-  
+
     before_action :set_vessel, only: [:show, :edit, :update]
     before_action :authenticate_user!, except: [:show]
 
@@ -16,7 +16,11 @@ class VesselsController < ApplicationController
     end
 
     def create
+      puts vessel_params.inspect
+      puts current_user
       @vessel = current_user.vessels.build(vessel_params)
+
+      puts @vessel.inspect
 
       if @vessel.save
         redirect_to @vessel, notice: "Saved..."
@@ -43,8 +47,6 @@ class VesselsController < ApplicationController
       end
 
       def vessel_params
-        params.require(:vessel).permit(:type, :dwt, :age, :country_built, :imo_no, :delivery_area, :dellivery_date, :description)
+        params.require(:vessel).permit(:name, :price,:vessel_type, :dwt, :age, :country_built, :imo_no, :delivery_area, :delivery_date, :description)
       end
   end
-
-end
