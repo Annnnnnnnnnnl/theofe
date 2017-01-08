@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'vessels/index'
+
+  get 'vessels/show'
+
+  get 'vessels/new'
+
+  get 'vessels/create'
+
+  get 'vessels/edit'
+
+  get 'vessels/update'
+
   root 'pages#home'
 
   devise_for 	:users,
@@ -7,6 +19,8 @@ Rails.application.routes.draw do
               :controllers => {:registrations => 'registrations'}
 
   resources :users, only: [:show]
+  resources :vessels
+
 
 
 end
