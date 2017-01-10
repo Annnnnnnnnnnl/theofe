@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170108072841) do
+ActiveRecord::Schema.define(version: 20170110190422) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -43,11 +43,15 @@ ActiveRecord::Schema.define(version: 20170108072841) do
     t.date     "delivery_date"
     t.string   "description"
     t.integer  "user_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.integer  "imo_no"
     t.string   "name"
     t.string   "price"
+    t.string   "q88_file_name"
+    t.string   "q88_content_type"
+    t.integer  "q88_file_size"
+    t.datetime "q88_updated_at"
     t.index ["user_id"], name: "index_vessels_on_user_id"
   end
 

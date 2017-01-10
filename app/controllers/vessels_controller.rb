@@ -47,6 +47,6 @@ class VesselsController < ApplicationController
       end
 
       def vessel_params
-        params.require(:vessel).permit(:name, :price,:vessel_type, :dwt, :age, :country_built, :imo_no, :delivery_area, :delivery_date, :description)
+        params.require(:vessel).permit(:name, :price,:vessel_type, :dwt, :age, :country_built, :imo_no, :q88, :delivery_area, :delivery_date, :description)
       end
   end

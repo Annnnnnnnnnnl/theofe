@@ -1,6 +1,7 @@
 class Vessel < ApplicationRecord
   belongs_to :user
-
+  has_attached_file :q88
+  
   validates :name, presence: true
   validates :price, presence: true
   validates :vessel_type, presence: true
